@@ -27,7 +27,6 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               //! Logo
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: screenWidth / 4),
@@ -136,7 +135,9 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: EdgeInsets.only(left: screenWidth / 2),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/forgotPassword');
+                  },
                   child: const Text(
                     "Forgot Password?",
                     style: TextStyle(
@@ -157,7 +158,9 @@ class _LoginPageState extends State<LoginPage> {
                 height: screenHeight / 23.4,
                 width: screenWidth / 2.46,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/home');
+                  },
                   style: TextButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(0, 131, 37, 1),
                   ),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'image_capture.dart';
+import 'home_page.dart';
 import 'register_page.dart';
 import 'login_page.dart';
+import 'forgot_password.dart';
+
 
 class MySplashScreen extends StatelessWidget {
   double screenHeight = 1;
@@ -20,7 +22,7 @@ class MySplashScreen extends StatelessWidget {
       splashIconSize: screenHeight/1.5,
       duration: 2500,
       splashTransition: SplashTransition.fadeTransition,
-      nextScreen: const LoginPage(),
+      nextScreen: const RegisterPage(),
     );
   }
 }

@@ -1,9 +1,11 @@
+import 'package:college_gatekeeper/utilities/forgot_password.dart';
 import 'package:flutter/material.dart';
-import 'utilities/image_capture.dart';
+import 'utilities/home_page.dart';
 import 'utilities/splash_screen.dart';
 import 'utilities/register_page.dart';
 import 'utilities/login_page.dart';
-import 'utilities/image_capture.dart';
+import 'utilities/home_page.dart';
+import 'package:material_color_generator/material_color_generator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +31,8 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/register' : (context) => const RegisterPage(),
         '/login' : (context) => const LoginPage(),
-        '/image' : (context) => const ImageCapture(),
+        '/home' : (context) => const HomePage(),
+        '/forgotPassword' : (context) => const ForgotPassword(),
       },
     );
   }
