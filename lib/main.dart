@@ -1,13 +1,15 @@
-import 'package:college_gatekeeper/utilities/forgot_password.dart';
+import 'package:college_gatekeeper/screens/forgot_password.dart';
 import 'package:flutter/material.dart';
-import 'utilities/home_page.dart';
-import 'utilities/splash_screen.dart';
-import 'utilities/register_page.dart';
-import 'utilities/login_page.dart';
-import 'utilities/home_page.dart';
-import 'package:material_color_generator/material_color_generator.dart';
+import 'screens/home_page.dart';
+import 'screens/splash_screen.dart';
+import 'screens/register_page.dart';
+import 'screens/login_page.dart';
+import 'constants.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -27,24 +29,15 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MySplashScreen(),
+      home: const MySplashScreen(),
       routes: {
-        '/register' : (context) => const RegisterPage(),
-        '/login' : (context) => const LoginPage(),
-        '/home' : (context) => const HomePage(),
-        '/forgotPassword' : (context) => const ForgotPassword(),
+        register : (context) => const RegisterPage(),
+        login : (context) => const LoginPage(),
+        home : (context) => const HomePage(),
+        forgotPassword : (context) => const ForgotPassword(),
       },
     );
   }
 }
 
-// class MyApp extends StatelessWidget {
-//   MyApp({super.key});
-//   double screenHeight = 1;
-//   double screenWidth = 1;
-
-//   @override
-//   Widget build(BuildContext context) {
-    
-// }
 

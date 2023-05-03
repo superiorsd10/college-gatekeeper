@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import '../constants.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _LoginPageState extends State<LoginPage> {
   bool passUserPassword = true;
   bool passAdminPassword = true;
-  TextEditingController? _nameController;
   TextEditingController? _emailController;
   TextEditingController? _passwordController;
   TextEditingController? _adminPasswordController;
@@ -18,8 +18,8 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    //! print(screenWidth);
-    //! print(screenHeight);
+    //!  print(screenWidth);
+    //!  print(screenHeight);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -38,33 +38,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const Text(
-                "Register",
+                "Login",
                 style: TextStyle(
                   color: Color.fromRGBO(0, 95, 153, 1),
                   fontSize: 50,
                   fontWeight: FontWeight.w700,
                   fontFamily: 'Source Sans Pro',
-                ),
-              ),
-
-              //! Name field
-              SizedBox(
-                height: screenHeight / 9.36,
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(screenWidth / 8,
-                      screenWidth / 25, screenWidth / 8, screenWidth / 25),
-                  child: TextFormField(
-                    controller: _nameController,
-                    decoration: const InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                        color: Color.fromRGBO(0, 95, 153, 1),
-                      )),
-                      labelText: 'Name',
-                      hintText: 'Enter your name',
-                      focusColor: Color.fromRGBO(0, 95, 153, 1),
-                    ),
-                  ),
                 ),
               ),
 
@@ -163,22 +142,42 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               SizedBox(
-                height: screenHeight / 16,
+                height: screenHeight / 70,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: screenWidth / 2),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, forgotPassword);
+                  },
+                  child: const Text(
+                    "Forgot Password?",
+                    style: TextStyle(
+                      color: Color.fromRGBO(0, 95, 153, 1),
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Source Sans Pro',
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: screenHeight / 22.5,
               ),
 
-              //! register button
+              //!login button
               SizedBox(
                 height: screenHeight / 23.4,
                 width: screenWidth / 2.46,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/home');
+                    Navigator.pushReplacementNamed(context, home);
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(0, 131, 37, 1),
                   ),
                   child: const Text(
-                    "Register",
+                    "Login",
                     style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 1),
                       fontSize: 20,
@@ -195,7 +194,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Already have an account?",
+                    "Don't have an account?",
                     style: TextStyle(
                       color: Color.fromRGBO(0, 95, 153, 1),
                       fontSize: 15,
@@ -205,11 +204,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   TextButton(
                     onPressed: () {
-                      //* moving to login page
-                      Navigator.pushReplacementNamed(context, '/login');
+                      //* moving to register page
+                      Navigator.pushReplacementNamed(context, register);
                     },
                     child: const Text(
-                      "Login Now",
+                      "Register Now",
                       style: TextStyle(
                         color: Color.fromRGBO(0, 95, 153, 1),
                         fontSize: 15,
@@ -221,7 +220,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ],
               ),
               SizedBox(
-                height: screenHeight / 60,
+                height: screenHeight / 13,
               ),
             ],
           ),

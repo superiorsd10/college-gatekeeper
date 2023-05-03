@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "602191639107",
+    "project_id": "college-gatekeeper",
+    "storage_bucket": "college-gatekeeper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602191639107:android:888ee85845a1dd36cf5af6",
+        "android_client_info": {
+          "package_name": "com.example.college_gatekeeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602191639107-fk3ck37ui3r7r6nftoedd5kc81psas31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvtjmt6jsk8X51_qQ8V4QlxJVTyeakTXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602191639107-fk3ck37ui3r7r6nftoedd5kc81psas31.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

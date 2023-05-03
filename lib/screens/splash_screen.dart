@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'home_page.dart';
 import 'register_page.dart';
-import 'login_page.dart';
-import 'forgot_password.dart';
 
 
 class MySplashScreen extends StatelessWidget {
-  double screenHeight = 1;
-  double screenWidth = 1;
-  MySplashScreen({super.key});
+  const MySplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    screenHeight = MediaQuery.of(context).size.height;
-    screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    //! double screenWidth = MediaQuery.of(context).size.width;
     return AnimatedSplashScreen(
       splash: Image.asset(
         'images/splash_image.png',

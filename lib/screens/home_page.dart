@@ -32,8 +32,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
+    //! double screenHeight = MediaQuery.of(context).size.height;
+    //! double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 95, 153, 1),
@@ -55,10 +55,10 @@ class _HomePageState extends State<HomePage> {
             onSelected: (String result) {
               switch (result) {
                 case 'Profile':
-                  print('filter 1 clicked');
+                  // print('filter 1 clicked');
                   break;
                 case 'About Team':
-                  print('filter 2 clicked');
+                  // print('filter 2 clicked');
                   break;
                 default:
               }

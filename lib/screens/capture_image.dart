@@ -16,7 +16,7 @@ class _ImageCaptureState extends State<ImageCapture> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       // crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,7 +57,7 @@ class _ImageCaptureState extends State<ImageCapture> {
     if (pickedFile != null) {
       setState(() {
         imageFile = File(pickedFile.path);
-        print(imageFile);
+        //! print(imageFile);
       });
     }
   }
