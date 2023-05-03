@@ -17,8 +17,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    //! print(screenWidth);
-    //! print(screenHeight);
+    //!  print(screenWidth);
+    //!  print(screenHeight);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -46,86 +46,97 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
 
-              //! email field
-              Padding(
-                padding: EdgeInsets.fromLTRB(screenWidth / 8, screenHeight / 20,
-                    screenWidth / 8, screenWidth / 25),
-                child: TextFormField(
-                  controller: _emailController,
-                  decoration: const InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                      color: Color.fromRGBO(0, 95, 153, 1),
-                    )),
-                    labelText: 'Email',
-                    hintText: 'Enter your email',
-                    focusColor: Color.fromRGBO(0, 95, 153, 1),
+              //! Email field
+              SizedBox(
+                height: screenHeight / 9.36,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(screenWidth / 8,
+                      screenWidth / 25, screenWidth / 8, screenWidth / 25),
+                  child: TextFormField(
+                    controller: _emailController,
+                    decoration: const InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                        color: Color.fromRGBO(0, 95, 153, 1),
+                      )),
+                      labelText: 'Email',
+                      hintText: 'Enter your email',
+                      focusColor: Color.fromRGBO(0, 95, 153, 1),
+                    ),
                   ),
                 ),
               ),
 
               //! password field
-              Padding(
-                padding: EdgeInsets.fromLTRB(
-                    screenWidth / 8, 0, screenWidth / 8, screenWidth / 25),
-                child: TextFormField(
-                  controller: _passwordController,
-                  obscureText: passUserPassword,
-                  decoration: InputDecoration(
-                    suffix: IconButton(
-                      icon: Icon(passUserPassword == true
-                          ? Icons.remove_red_eye
-                          : Icons.password),
-                      onPressed: () {
-                        setState(() {
-                          if (passUserPassword) {
-                            passUserPassword = false;
-                          } else {
-                            passUserPassword = true;
-                          }
-                        });
-                      },
+              SizedBox(
+                height: screenHeight / 10.4,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(screenWidth / 8,
+                      screenWidth / 25, screenWidth / 8, screenWidth / 25),
+                  child: TextFormField(
+                    controller: _passwordController,
+                    obscureText: passUserPassword,
+                    decoration: InputDecoration(
+                      suffix: IconButton(
+                        icon: Icon(
+                          passUserPassword == true
+                              ? Icons.remove_red_eye
+                              : Icons.password,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            if (passUserPassword) {
+                              passUserPassword = false;
+                            } else {
+                              passUserPassword = true;
+                            }
+                          });
+                        },
+                      ),
+                      focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                        color: Color.fromRGBO(0, 95, 153, 1),
+                      )),
+                      labelText: 'Password',
+                      hintText: 'Enter your password',
+                      focusColor: const Color.fromRGBO(0, 95, 153, 1),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                      color: Color.fromRGBO(0, 95, 153, 1),
-                    )),
-                    labelText: 'Password',
-                    hintText: 'Enter your password',
-                    focusColor: const Color.fromRGBO(0, 95, 153, 1),
                   ),
                 ),
               ),
 
               //! admin password field
-              Padding(
-                padding:
-                    EdgeInsets.fromLTRB(screenWidth / 8, 0, screenWidth / 8, 0),
-                child: TextFormField(
-                  controller: _adminPasswordController,
-                  obscureText: passAdminPassword,
-                  decoration: InputDecoration(
-                    suffix: IconButton(
-                      icon: Icon(passAdminPassword == true
-                          ? Icons.remove_red_eye
-                          : Icons.password),
-                      onPressed: () {
-                        setState(() {
-                          if (passAdminPassword) {
-                            passAdminPassword = false;
-                          } else {
-                            passAdminPassword = true;
-                          }
-                        });
-                      },
+              SizedBox(
+                height: screenHeight / 9.36,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(screenWidth / 8,
+                      screenWidth / 15, screenWidth / 8, screenWidth / 25),
+                  child: TextFormField(
+                    controller: _adminPasswordController,
+                    obscureText: passAdminPassword,
+                    decoration: InputDecoration(
+                      suffix: IconButton(
+                        icon: Icon(passAdminPassword == true
+                            ? Icons.remove_red_eye
+                            : Icons.password),
+                        onPressed: () {
+                          setState(() {
+                            if (passAdminPassword) {
+                              passAdminPassword = false;
+                            } else {
+                              passAdminPassword = true;
+                            }
+                          });
+                        },
+                      ),
+                      focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                        color: Color.fromRGBO(0, 95, 153, 1),
+                      )),
+                      labelText: 'Admin Password',
+                      hintText: 'Enter admin password',
+                      focusColor: const Color.fromRGBO(0, 95, 153, 1),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                      color: Color.fromRGBO(0, 95, 153, 1),
-                    )),
-                    labelText: 'Admin Password',
-                    hintText: 'Enter admin password',
-                    focusColor: const Color.fromRGBO(0, 95, 153, 1),
                   ),
                 ),
               ),
@@ -208,7 +219,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
               SizedBox(
-                height: screenHeight / 25,
+                height: screenHeight / 13,
               ),
             ],
           ),

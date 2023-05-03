@@ -49,10 +49,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
               //! Name field
               SizedBox(
-                height: 100,
+                height: screenHeight / 9.36,
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(screenWidth / 8, screenWidth / 25,
-                      screenWidth / 8, screenWidth / 25),
+                  padding: EdgeInsets.fromLTRB(screenWidth / 8,
+                      screenWidth / 25, screenWidth / 8, screenWidth / 25),
                   child: TextFormField(
                     controller: _nameController,
                     decoration: const InputDecoration(
@@ -70,10 +70,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
               //! Email field
               SizedBox(
-                height: 100,
+                height: screenHeight / 9.36,
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      screenWidth / 8, screenWidth / 25, screenWidth / 8, screenWidth / 25),
+                  padding: EdgeInsets.fromLTRB(screenWidth / 8,
+                      screenWidth / 25, screenWidth / 8, screenWidth / 25),
                   child: TextFormField(
                     controller: _emailController,
                     decoration: const InputDecoration(
@@ -91,18 +91,20 @@ class _RegisterPageState extends State<RegisterPage> {
 
               //! password field
               SizedBox(
-                height: 90,
+                height: screenHeight / 10.4,
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      screenWidth / 8, screenWidth / 25, screenWidth / 8, screenWidth / 25),
+                  padding: EdgeInsets.fromLTRB(screenWidth / 8,
+                      screenWidth / 25, screenWidth / 8, screenWidth / 25),
                   child: TextFormField(
                     controller: _passwordController,
                     obscureText: passUserPassword,
                     decoration: InputDecoration(
                       suffix: IconButton(
-                        icon: Icon(passUserPassword == true
-                            ? Icons.remove_red_eye
-                            : Icons.password),
+                        icon: Icon(
+                          passUserPassword == true
+                              ? Icons.remove_red_eye
+                              : Icons.password,
+                        ),
                         onPressed: () {
                           setState(() {
                             if (passUserPassword) {
@@ -127,10 +129,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
               //! admin password field
               SizedBox(
-                height: 90,
+                height: screenHeight / 9.36,
                 child: Padding(
-                  padding:
-                      EdgeInsets.fromLTRB(screenWidth / 8, screenWidth / 25, screenWidth / 8, screenWidth / 25),
+                  padding: EdgeInsets.fromLTRB(screenWidth / 8,
+                      screenWidth / 15, screenWidth / 8, screenWidth / 25),
                   child: TextFormField(
                     controller: _adminPasswordController,
                     obscureText: passAdminPassword,
@@ -219,7 +221,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ],
               ),
               SizedBox(
-                height: screenHeight / 25,
+                height: screenHeight / 60,
               ),
             ],
           ),
