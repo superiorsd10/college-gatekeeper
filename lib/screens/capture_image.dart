@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
@@ -17,32 +20,36 @@ class _ImageCaptureState extends State<ImageCapture> {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: screenWidth / 4),
-          child: SizedBox(
-            height: screenHeight / 19,
-            width: screenWidth / 2,
-            child: TextButton(
-              onPressed: _getFromCamera,
-              style: TextButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(0, 131, 37, 1),
-              ),
-              child: const Text(
-                "Capture ID Card",
-                style: TextStyle(
-                  color: Color.fromRGBO(255, 255, 255, 1),
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: 'Source Sans Pro',
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth / 4),
+              child: SizedBox(
+                height: screenHeight / 19,
+                width: screenWidth / 2,
+                child: TextButton(
+                  onPressed: _getFromCamera,
+                  style: TextButton.styleFrom(
+                    backgroundColor: const Color.fromRGBO(0, 131, 37, 1),
+                  ),
+                  child: const Text(
+                    "Capture ID Card",
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Source Sans Pro',
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
+          ],
         ),
-      ],
+      ),
     );
   }
 
@@ -54,10 +61,8 @@ class _ImageCaptureState extends State<ImageCapture> {
       maxHeight: 1800,
     );
     if (pickedFile != null) {
-      setState(() {
-        imageFile = File(pickedFile.path);
-        //! print(imageFile);
-      });
+      final bytes = await pickedFile.readAsBytes();
+      final base64String = base64.encode(bytes);
     }
   }
 }

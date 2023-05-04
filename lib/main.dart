@@ -1,6 +1,7 @@
 import 'package:college_gatekeeper/screens/forgot_password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'screens/home_page.dart';
 import 'screens/splash_screen.dart';
 import 'screens/register_page.dart';
