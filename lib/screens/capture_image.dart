@@ -19,12 +19,11 @@ class _ImageCaptureState extends State<ImageCapture> {
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth / 4),
           child: SizedBox(
-            height: screenHeight / 23.4,
+            height: screenHeight / 19,
             width: screenWidth / 2,
             child: TextButton(
               onPressed: _getFromCamera,

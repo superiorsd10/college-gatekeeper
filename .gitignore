@@ -46,3 +46,4 @@ app.*.map.json
 macos 
 windows
 linux
+lib/admin_password.dart
