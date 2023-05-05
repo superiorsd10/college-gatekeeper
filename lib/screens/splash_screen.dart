@@ -2,7 +2,6 @@ import 'package:college_gatekeeper/services/state_persistance.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
-
 class MySplashScreen extends StatelessWidget {
   const MySplashScreen({super.key});
 
@@ -13,7 +12,7 @@ class MySplashScreen extends StatelessWidget {
       splash: Image.asset(
         'images/splash_image.png',
       ),
-      splashIconSize: screenHeight/1.5,
+      splashIconSize: screenHeight / 1.5,
       duration: 1000,
       splashTransition: SplashTransition.fadeTransition,
       nextScreen: const StatePersistence(),

@@ -1,7 +1,6 @@
 import 'package:college_gatekeeper/screens/forgot_password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'screens/home_page.dart';
 import 'screens/splash_screen.dart';
 import 'screens/register_page.dart';
@@ -17,8 +16,8 @@ void main() async {
     DeviceOrientation.portraitUp,
   ]);
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.white, // navigation bar color
-    statusBarColor: Colors.white, // status bar color
+    systemNavigationBarColor: kWhite, // navigation bar color
+    statusBarColor: kWhite, // status bar color
     statusBarIconBrightness: Brightness.dark, // status bar icons' color
     systemNavigationBarIconBrightness: Brightness.dark,
   ));
@@ -39,7 +38,7 @@ class _MyAppState extends State<MyApp> {
       title: 'College Gatekeeper',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: kBlue, 
       ),
       home: const MySplashScreen(),
       routes: {

@@ -53,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: kWhite,
             child: Form(
               key: _formKey,
               child: Column(
@@ -71,7 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   const Text(
                     "Register",
                     style: TextStyle(
-                      color: Color.fromRGBO(0, 95, 153, 1),
+                      color: kDarkBlue,
                       fontSize: 50,
                       fontWeight: FontWeight.w700,
                       fontFamily: 'Source Sans Pro',
@@ -89,13 +89,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         decoration: const InputDecoration(
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color.fromRGBO(0, 95, 153, 1),
+                              color: kDarkBlue,
                             ),
                           ),
                           hintText: 'Enter your name',
-                          focusColor: Color.fromRGBO(0, 95, 153, 1),
+                          focusColor: kDarkBlue,
                           errorStyle: TextStyle(
-                            color: Colors.redAccent,
+                            color: kRed,
                             fontSize: 15,
                           ),
                         ),
@@ -120,13 +120,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         decoration: const InputDecoration(
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color.fromRGBO(0, 95, 153, 1),
+                              color: kDarkBlue,
                             ),
                           ),
                           hintText: 'Enter your email',
-                          focusColor: Color.fromRGBO(0, 95, 153, 1),
+                          focusColor: kDarkBlue,
                           errorStyle: TextStyle(
-                            color: Colors.redAccent,
+                            color: kRed,
                             fontSize: 15,
                           ),
                         ),
@@ -168,12 +168,12 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                           focusedBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(
-                            color: Color.fromRGBO(0, 95, 153, 1),
+                            color: kDarkBlue,
                           )),
                           hintText: 'Enter your password',
-                          focusColor: const Color.fromRGBO(0, 95, 153, 1),
+                          focusColor: kDarkBlue,
                           errorStyle: const TextStyle(
-                            color: Colors.redAccent,
+                            color: kRed,
                             fontSize: 15,
                           ),
                         ),
@@ -213,12 +213,12 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                           focusedBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(
-                            color: Color.fromRGBO(0, 95, 153, 1),
+                            color: kDarkBlue,
                           )),
                           hintText: 'Enter admin password',
-                          focusColor: const Color.fromRGBO(0, 95, 153, 1),
+                          focusColor: kDarkBlue,
                           errorStyle: const TextStyle(
-                            color: Colors.redAccent,
+                            color: kRed,
                             fontSize: 15,
                           ),
                         ),
@@ -242,7 +242,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: _loading
                         ? const Center(
                             child: CircularProgressIndicator(
-                              color: Color.fromRGBO(0, 95, 153, 1),
+                              color: kDarkBlue,
                             ),
                           )
                         : TextButton(
@@ -259,12 +259,12 @@ class _RegisterPageState extends State<RegisterPage> {
                             },
                             style: TextButton.styleFrom(
                               backgroundColor:
-                                  const Color.fromRGBO(0, 131, 37, 1),
+                                  kDarkGreen,
                             ),
                             child: const Text(
                               "Register",
                               style: TextStyle(
-                                color: Color.fromRGBO(255, 255, 255, 1),
+                                color: kWhite,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
                                 fontFamily: 'Source Sans Pro',
@@ -281,7 +281,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       const Text(
                         "Already have an account?",
                         style: TextStyle(
-                          color: Color.fromRGBO(0, 95, 153, 1),
+                          color: kDarkBlue,
                           fontSize: 15,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'Source Sans Pro',
@@ -295,7 +295,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: const Text(
                           "Login Now",
                           style: TextStyle(
-                            color: Color.fromRGBO(0, 95, 153, 1),
+                            color: kDarkBlue,
                             fontSize: 15,
                             fontWeight: FontWeight.w700,
                             fontFamily: 'Source Sans Pro',

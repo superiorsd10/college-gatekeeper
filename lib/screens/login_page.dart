@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: kWhite,
             child: Form(
               key: _formKey,
               child: Column(
@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                   const Text(
                     "Login",
                     style: TextStyle(
-                      color: Color.fromRGBO(0, 95, 153, 1),
+                      color: kDarkBlue,
                       fontSize: 50,
                       fontWeight: FontWeight.w700,
                       fontFamily: 'Source Sans Pro',
@@ -87,13 +87,13 @@ class _LoginPageState extends State<LoginPage> {
                         decoration: const InputDecoration(
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color.fromRGBO(0, 95, 153, 1),
+                              color: kDarkBlue,
                             ),
                           ),
                           hintText: 'Enter your email',
-                          focusColor: Color.fromRGBO(0, 95, 153, 1),
+                          focusColor: kDarkBlue,
                           errorStyle: TextStyle(
-                            color: Colors.redAccent,
+                            color: kRed,
                             fontSize: 15,
                           ),
                         ),
@@ -135,12 +135,12 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           focusedBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(
-                            color: Color.fromRGBO(0, 95, 153, 1),
+                            color: kDarkBlue,
                           )),
                           hintText: 'Enter your password',
-                          focusColor: const Color.fromRGBO(0, 95, 153, 1),
+                          focusColor: kDarkBlue,
                           errorStyle: const TextStyle(
-                            color: Colors.redAccent,
+                            color: kRed,
                             fontSize: 15,
                           ),
                         ),
@@ -180,12 +180,12 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           focusedBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(
-                            color: Color.fromRGBO(0, 95, 153, 1),
+                            color: kDarkBlue,
                           )),
                           hintText: 'Enter admin password',
-                          focusColor: const Color.fromRGBO(0, 95, 153, 1),
+                          focusColor: kDarkBlue,
                           errorStyle: const TextStyle(
-                            color: Colors.redAccent,
+                            color: kRed,
                             fontSize: 15,
                           ),
                         ),
@@ -210,7 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: const Text(
                         "Forgot Password?",
                         style: TextStyle(
-                          color: Color.fromRGBO(0, 95, 153, 1),
+                          color: kDarkBlue,
                           fontSize: 15,
                           fontWeight: FontWeight.w700,
                           fontFamily: 'Source Sans Pro',
@@ -229,7 +229,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: _loading
                         ? const Center(
                             child: CircularProgressIndicator(
-                              color: Color.fromRGBO(0, 95, 153, 1),
+                              color: kDarkBlue,
                             ),
                           )
                         : TextButton(
@@ -247,12 +247,12 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             style: TextButton.styleFrom(
                               backgroundColor:
-                                  const Color.fromRGBO(0, 131, 37, 1),
+                                  kDarkGreen,
                             ),
                             child: const Text(
                               "Login",
                               style: TextStyle(
-                                color: Color.fromRGBO(255, 255, 255, 1),
+                                color: kWhite,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
                                 fontFamily: 'Source Sans Pro',
@@ -269,7 +269,7 @@ class _LoginPageState extends State<LoginPage> {
                       const Text(
                         "Don't have an account?",
                         style: TextStyle(
-                          color: Color.fromRGBO(0, 95, 153, 1),
+                          color: kDarkBlue,
                           fontSize: 15,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'Source Sans Pro',
@@ -283,7 +283,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: const Text(
                           "Register Now",
                           style: TextStyle(
-                            color: Color.fromRGBO(0, 95, 153, 1),
+                            color: kDarkBlue,
                             fontSize: 15,
                             fontWeight: FontWeight.w700,
                             fontFamily: 'Source Sans Pro',

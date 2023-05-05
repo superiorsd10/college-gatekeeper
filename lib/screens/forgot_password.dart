@@ -1,3 +1,4 @@
+import 'package:college_gatekeeper/constants.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -15,12 +16,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
+        backgroundColor: kTransparent,
+        shadowColor: kTransparent,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios,
-            color: Color.fromRGBO(0, 95, 153, 1),
+            color: kDarkBlue,
           ),
           onPressed: () {
             Navigator.pushReplacementNamed(context, '/login');
@@ -39,7 +40,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 child: const Text(
                   "Enter your email to receive\npassword reset link",
                   style: TextStyle(
-                    color: Color.fromRGBO(0, 95, 153, 1),
+                    color: kDarkBlue,
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Source Sans Pro',
@@ -60,11 +61,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   decoration: const InputDecoration(
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color.fromRGBO(0, 95, 153, 1),
+                        color: kDarkBlue,
                       ),
                     ),
                     hintText: 'Enter your email',
-                    focusColor: Color.fromRGBO(0, 95, 153, 1),
+                    focusColor: kDarkBlue,
                   ),
                 ),
               ),
@@ -76,12 +77,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 child: TextButton(
                   onPressed: () {},
                   style: TextButton.styleFrom(
-                    backgroundColor: const Color.fromRGBO(0, 131, 37, 1),
+                    backgroundColor: kDarkGreen,
                   ),
                   child: const Text(
                     "Reset Password",
                     style: TextStyle(
-                      color: Color.fromRGBO(255, 255, 255, 1),
+                      color: kWhite,
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
                       fontFamily: 'Source Sans Pro',

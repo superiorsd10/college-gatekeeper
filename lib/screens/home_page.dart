@@ -1,3 +1,4 @@
+import 'package:college_gatekeeper/constants.dart';
 import 'package:flutter/material.dart';
 import 'capture_image.dart';
 
@@ -36,11 +37,11 @@ class _HomePageState extends State<HomePage> {
     //! double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(0, 95, 153, 1),
+        backgroundColor: kDarkBlue,
         title: const Text(
           "College GateKeeper",
           style: TextStyle(
-            color: Colors.white,
+            color: kWhite,
             fontSize: 25,
             fontWeight: FontWeight.w600,
             fontFamily: 'Source Sans Pro',
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage> {
           PopupMenuButton<String>(
             icon: const Icon(
               Icons.more_vert,
-              color: Colors.white,
+              color: kWhite,
             ),
             onSelected: (String result) {
               switch (result) {
@@ -69,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   'Profile',
                   style: TextStyle(
-                    color: Color.fromRGBO(0, 95, 153, 1),
+                    color: kDarkBlue,
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Source Sans Pro',
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   'About Team',
                   style: TextStyle(
-                    color: Color.fromRGBO(0, 95, 153, 1),
+                    color: kDarkBlue,
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Source Sans Pro',
@@ -96,9 +97,9 @@ class _HomePageState extends State<HomePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromRGBO(0, 95, 153, 1),
+        backgroundColor: kDarkBlue,
         unselectedItemColor: const Color.fromRGBO(255, 255, 255, 0.8),
-        selectedItemColor: const Color.fromRGBO(255, 255, 255, 1),
+        selectedItemColor: kWhite,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
