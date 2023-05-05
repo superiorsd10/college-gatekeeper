@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 95, 153, 1),
         title: const Text(
-          "College Gatekeeper",
+          "College GateKeeper",
           style: TextStyle(
             color: Colors.white,
             fontSize: 25,

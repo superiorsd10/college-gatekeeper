@@ -17,18 +17,23 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   bool passUserPassword = true;
   bool passAdminPassword = true;
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _adminPasswordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _adminPasswordController =
+      TextEditingController();
+
+  bool _loading = false;
 
   Future<void> signInUser() async {
     if (confirmAdminPassword()) {
       await FirebaseAuthMethods(
               FirebaseAuth.instance, FirebaseFirestore.instance)
           .signInWithEmail(
-              email: _emailController.text,
-              password: _passwordController.text,
-              context: context);
+        email: _emailController.text,
+        password: _passwordController.text,
+        context: context,
+      );
+      Navigator.pushReplacementNamed(context, home);
     } else {
       showSnackBar(context, 'Incorrect Admin Password');
     }
@@ -221,25 +226,39 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: screenHeight / 19,
                     width: screenWidth / 2.46,
-                    child: TextButton(
-                      onPressed: () async {
-                        if (_formKey.currentState!.validate()) {
-                          await signInUser();
-                        }
-                      },
-                      style: TextButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(0, 131, 37, 1),
-                      ),
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'Source Sans Pro',
-                        ),
-                      ),
-                    ),
+                    child: _loading
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                              color: Color.fromRGBO(0, 95, 153, 1),
+                            ),
+                          )
+                        : TextButton(
+                            onPressed: () async {
+                              if (_formKey.currentState!.validate()) {
+                                setState(() {
+                                  _loading = true;
+                                });
+                                _formKey.currentState!.save();
+                                await signInUser();
+                                setState(() {
+                                  _loading = false;
+                                });
+                              }
+                            },
+                            style: TextButton.styleFrom(
+                              backgroundColor:
+                                  const Color.fromRGBO(0, 131, 37, 1),
+                            ),
+                            child: const Text(
+                              "Login",
+                              style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 1),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Source Sans Pro',
+                              ),
+                            ),
+                          ),
                   ),
                   SizedBox(
                     height: screenHeight / 35,

@@ -23,6 +23,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _adminPasswordController =
       TextEditingController();
 
+  bool _loading = false;
+
   Future<void> signUpUser() async {
     if (confirmAdminPassword()) {
       await FirebaseAuthMethods(
@@ -33,8 +35,8 @@ class _RegisterPageState extends State<RegisterPage> {
         name: _nameController.text,
         context: context,
       );
-    }
-    else{
+      Navigator.pushReplacementNamed(context, home);
+    } else {
       showSnackBar(context, 'Incorrect Admin Password');
     }
   }
@@ -237,25 +239,38 @@ class _RegisterPageState extends State<RegisterPage> {
                   SizedBox(
                     height: screenHeight / 19,
                     width: screenWidth / 2.46,
-                    child: TextButton(
-                      onPressed: () async {
-                        if (_formKey.currentState!.validate()) {
-                          await signUpUser();
-                        }
-                      },
-                      style: TextButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(0, 131, 37, 1),
-                      ),
-                      child: const Text(
-                        "Register",
-                        style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'Source Sans Pro',
-                        ),
-                      ),
-                    ),
+                    child: _loading
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                              color: Color.fromRGBO(0, 95, 153, 1),
+                            ),
+                          )
+                        : TextButton(
+                            onPressed: () async {
+                              if (_formKey.currentState!.validate()) {
+                                setState(() {
+                                  _loading = true;
+                                });
+                                await signUpUser();
+                                setState(() {
+                                  _loading = false;
+                                });
+                              }
+                            },
+                            style: TextButton.styleFrom(
+                              backgroundColor:
+                                  const Color.fromRGBO(0, 131, 37, 1),
+                            ),
+                            child: const Text(
+                              "Register",
+                              style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 1),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Source Sans Pro',
+                              ),
+                            ),
+                          ),
                   ),
                   SizedBox(
                     height: screenHeight / 35,

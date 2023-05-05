@@ -14,7 +14,7 @@ class MySplashScreen extends StatelessWidget {
         'images/splash_image.png',
       ),
       splashIconSize: screenHeight/1.5,
-      duration: 2500,
+      duration: 1000,
       splashTransition: SplashTransition.fadeTransition,
       nextScreen: const StatePersistence(),
     );
