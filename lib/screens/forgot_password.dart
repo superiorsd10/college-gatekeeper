@@ -24,7 +24,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             color: kDarkBlue,
           ),
           onPressed: () {
-            Navigator.pushReplacementNamed(context, '/login');
+            Navigator.pushReplacementNamed(context, login);
           },
         ),
       ),

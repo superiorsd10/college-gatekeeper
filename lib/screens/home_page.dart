@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage> {
                   // print('filter 1 clicked');
                   break;
                 case 'About Team':
+                  Navigator.pushReplacementNamed(context, aboutTeam);
                   // print('filter 2 clicked');
                   break;
                 default:

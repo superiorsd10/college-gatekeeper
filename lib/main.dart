@@ -7,6 +7,7 @@ import 'screens/register_page.dart';
 import 'screens/login_page.dart';
 import 'constants.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'screens/about_team.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +47,7 @@ class _MyAppState extends State<MyApp> {
         login: (context) => const LoginPage(),
         home: (context) => const HomePage(),
         forgotPassword: (context) => const ForgotPassword(),
+        aboutTeam: (context) => const AboutPage(),
       },
     );
   }
