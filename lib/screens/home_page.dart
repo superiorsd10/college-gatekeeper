@@ -1,7 +1,6 @@
 import 'package:college_gatekeeper/constants.dart';
 import 'package:flutter/material.dart';
 import 'capture_image.dart';
-import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:simple_icons/simple_icons.dart';
 import '../constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 Widget myCard(String name, String rollNumber, String github, String linkedIn) {
+  _launchURL(String link) async {
+    final Uri url = Uri.parse(link);
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
   return Card(
     elevation: 0,
     shadowColor: kTransparent,
@@ -39,9 +47,23 @@ Widget myCard(String name, String rollNumber, String github, String linkedIn) {
             mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
-                  onPressed: () {}, icon: const Icon(SimpleIcons.github, color: kDarkBlue, size: 35,)),
+                  onPressed: () {
+                    _launchURL(github);
+                  },
+                  icon: const Icon(
+                    SimpleIcons.github,
+                    color: kDarkBlue,
+                    size: 35,
+                  )),
               IconButton(
-                  onPressed: () {}, icon: const Icon(SimpleIcons.linkedin, color: kDarkBlue, size: 35,)),
+                  onPressed: () {
+                    _launchURL(linkedIn);
+                  },
+                  icon: const Icon(
+                    SimpleIcons.linkedin,
+                    color: kDarkBlue,
+                    size: 35,
+                  )),
             ],
           ),
         ),

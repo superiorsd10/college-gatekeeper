@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:college_gatekeeper/services/api_services.dart';
 import 'package:college_gatekeeper/utils/show_snackbar.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
+import 'package:image/image.dart' as img;
 
 class ImageCapture extends StatefulWidget {
   const ImageCapture({super.key});
@@ -85,8 +87,11 @@ class _ImageCaptureState extends State<ImageCapture> {
     );
     if (pickedFile != null) {
       final bytes = await pickedFile.readAsBytes();
-      final base64String = base64.encode(bytes);
-      confirmRollNumber(context, base64String);
+      final img.Image image = img.decodeImage(bytes)!;
+      img.grayscale(image);
+      Uint8List grayscaleImageBytes = img.encodeJpg(image);
+      final base64GrayscaleImage = base64Encode(grayscaleImageBytes);
+      confirmRollNumber(context, base64GrayscaleImage);
     }
   }
 }
