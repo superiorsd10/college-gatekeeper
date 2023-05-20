@@ -8,6 +8,7 @@ const String aboutTeam = '/aboutTeam';
 const String profile = '/profile';
 const String dateList = '/date';
 const String studentList = '/studentList';
+const String statePersistence = '/statePersistence';
 
 const kWhite = Colors.white; 
 const kBlue = Colors.blue; 

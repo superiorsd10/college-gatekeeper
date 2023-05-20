@@ -86,6 +86,7 @@ class _ImageCaptureState extends State<ImageCapture> {
                 IconButton(
                   onPressed: () async{
                     confirmRollNumberAPI(rollNumber);
+                    Navigator.pop(context);
                   },
                   icon: Icon(
                     Icons.check,

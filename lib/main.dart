@@ -1,4 +1,5 @@
 import 'package:college_gatekeeper/screens/forgot_password.dart';
+import 'package:college_gatekeeper/services/state_persistance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/home_page.dart';
@@ -53,6 +54,7 @@ class _MyAppState extends State<MyApp> {
         profile : (context) => const ProfilePage(),
         dateList : (context) => const DateList(),
         studentList : (context) => const StudentList(),
+        statePersistence: (context) => const StatePersistence(),
       },
     );
   }
