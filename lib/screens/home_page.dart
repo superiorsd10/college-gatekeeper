@@ -1,6 +1,7 @@
 import 'package:college_gatekeeper/constants.dart';
 import 'package:flutter/material.dart';
 import 'capture_image.dart';
+import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,8 +17,8 @@ class _HomePageState extends State<HomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
     ImageCapture(),
     Text(
-      'Index 1: Business',
-      style: optionStyle,
+      'Index 1 : List',
+      style : optionStyle,
     ),
     Text(
       'Index 2: School',
@@ -56,6 +57,7 @@ class _HomePageState extends State<HomePage> {
             onSelected: (String result) {
               switch (result) {
                 case 'Profile':
+                  Navigator.pushReplacementNamed(context, profile);
                   // print('filter 1 clicked');
                   break;
                 case 'About Team':

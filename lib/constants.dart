@@ -5,6 +5,7 @@ const String login = '/login';
 const String home = '/home';
 const String forgotPassword = '/forgotPassword';
 const String aboutTeam = '/aboutTeam';
+const String profile = '/profile';
 
 const kWhite = Colors.white; 
 const kBlue = Colors.blue; 
