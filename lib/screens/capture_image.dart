@@ -9,6 +9,8 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:image/image.dart' as img;
 
+import '../constants.dart';
+
 class ImageCapture extends StatefulWidget {
   const ImageCapture({super.key});
 
@@ -30,15 +32,74 @@ class _ImageCaptureState extends State<ImageCapture> {
     }
   }
 
+  Future<void> confirmRollNumberAPI(String rollNumber) async {
+    try {
+      Map<String, dynamic> response = await APIServices.confirmRollNumber('/confirm_roll_number', rollNumber, context);
+    } catch (err) {
+      showSnackBar(context, err.toString());
+    }
+  }
+
   void confirmRollNumber(BuildContext context, String base64String) async {
-  String rollNumber = await getRollNumber(base64String);
-  showDialog(
-    context: context,
-    builder: (context) => AlertDialog(
-      title: Text(rollNumber),
-    ),
-  );
-}
+    String rollNumber = await getRollNumber(base64String);
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(
+          'Confirm Roll Number',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            fontFamily: 'Source Sans Pro',
+            color: kDarkBlue,
+          ),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              rollNumber,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Source Sans Pro',
+                color: kDarkBlue,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: _getFromCamera,
+                  icon: Icon(
+                    Icons.camera,
+                    size: 20,
+                    color: kDarkBlue,
+                  ),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                IconButton(
+                  onPressed: () async{
+                    confirmRollNumberAPI(rollNumber);
+                  },
+                  icon: Icon(
+                    Icons.check,
+                    size: 20,
+                    color: kDarkGreen,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
