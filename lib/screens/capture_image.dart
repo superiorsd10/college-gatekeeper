@@ -1,8 +1,11 @@
 import 'dart:convert';
 
+import 'package:college_gatekeeper/services/api_services.dart';
+import 'package:college_gatekeeper/utils/show_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:http/http.dart' as http;
 
 class ImageCapture extends StatefulWidget {
   const ImageCapture({super.key});
@@ -13,6 +16,27 @@ class ImageCapture extends StatefulWidget {
 
 class _ImageCaptureState extends State<ImageCapture> {
   File? imageFile;
+
+  Future<String> getRollNumber(String base64String) async {
+    try {
+      Map<String, dynamic> response = await APIServices.getRollNumber(
+          '/upload_image', base64String, context);
+      return response['message'];
+    } catch (err) {
+      showSnackBar(context, err.toString());
+      return "-4";
+    }
+  }
+
+  void confirmRollNumber(BuildContext context, String base64String) async {
+  String rollNumber = await getRollNumber(base64String);
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text(rollNumber),
+    ),
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +86,7 @@ class _ImageCaptureState extends State<ImageCapture> {
     if (pickedFile != null) {
       final bytes = await pickedFile.readAsBytes();
       final base64String = base64.encode(bytes);
+      confirmRollNumber(context, base64String);
     }
   }
 }
