@@ -1,6 +1,7 @@
 import 'package:college_gatekeeper/constants.dart';
 import 'package:flutter/material.dart';
 import 'capture_image.dart';
+import 'student_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,10 +16,7 @@ class _HomePageState extends State<HomePage> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     ImageCapture(),
-    Text(
-      'Index 1 : List',
-      style : optionStyle,
-    ),
+    DateList(),
     Text(
       'Index 2: School',
       style: optionStyle,

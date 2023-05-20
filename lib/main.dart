@@ -9,6 +9,7 @@ import 'constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'screens/about_team.dart';
 import 'screens/profile_page.dart';
+import 'screens/student_list.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,6 +51,8 @@ class _MyAppState extends State<MyApp> {
         forgotPassword: (context) => const ForgotPassword(),
         aboutTeam: (context) => const AboutPage(),
         profile : (context) => const ProfilePage(),
+        dateList : (context) => const DateList(),
+        studentList : (context) => const StudentList(),
       },
     );
   }
