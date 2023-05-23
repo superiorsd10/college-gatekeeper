@@ -2,6 +2,7 @@ import 'package:college_gatekeeper/constants.dart';
 import 'package:flutter/material.dart';
 import 'capture_image.dart';
 import 'student_list.dart';
+import 'defaulter_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,10 +18,7 @@ class _HomePageState extends State<HomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
     ImageCapture(),
     DateList(),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    DefaulterScreen(),
   ];
 
   void _onItemTapped(int index) {

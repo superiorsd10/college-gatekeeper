@@ -45,7 +45,7 @@ class _ImageCaptureState extends State<ImageCapture> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(
+        title: const Text(
           'Confirm Roll Number',
           style: TextStyle(
             fontSize: 20,
@@ -59,28 +59,31 @@ class _ImageCaptureState extends State<ImageCapture> {
           children: [
             Text(
               rollNumber,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
                 fontFamily: 'Source Sans Pro',
                 color: kDarkBlue,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: _getFromCamera,
-                  icon: Icon(
+                  onPressed: (){
+                    Navigator.of(context, rootNavigator: true).pop('dialog');
+                    _getFromCamera();
+                  },
+                  icon: const Icon(
                     Icons.camera,
                     size: 20,
                     color: kDarkBlue,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 IconButton(
@@ -88,7 +91,7 @@ class _ImageCaptureState extends State<ImageCapture> {
                     confirmRollNumberAPI(rollNumber);
                     Navigator.pop(context);
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.check,
                     size: 20,
                     color: kDarkGreen,
